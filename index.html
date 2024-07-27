@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise for Tamanna</title>
+    <style>
+        body {
+            background-color: #add8e6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: #ffffff;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .container.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        h1 {
+            color: #ff1493;
+        }
+        p {
+            color: #00008b;
+        }
+        button {
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="layer1" class="container active">
+        <h1>Welcome!</h1>
+        <p>Special message for you ;))</p>
+        <button onclick="showNextLayer('layer2')">Click to Proceed</button>
+    </div>
+
+    <div id="layer2" class="container">
+        <h1>Almost There...</h1>
+        <p>Just a little more patience.</p>
+        <button onclick="showNextLayer('layer3')">Click to Continue</button>
+    </div>
+
+    <div id="layer3" class="container">
+        <h1>Ready?</h1>
+        <p>Lets get it :D</p>
+        <button onclick="showNextLayer('finalMessage')">Click Here</button>
+    </div>
+
+    <div id="finalMessage" class="container">
+        <h1>Happy Birthday Tamanna!</h1>
+        <p>Happy Birthday and Happy Anniversary! This past year has been the best, all thanks to you! Your sweetness and kindness have made every day special. I’m so grateful for every moment we've shared. Thank you for being such an incredible part of my life. I hope your day is filled with love, joy, and lots of fun. I hope to have an amazing year ahead with you. Happy Birthday! Have fun. Love you!!!!</p>
+    </div>
+
+    <script>
+        function showNextLayer(layerId) {
+            const currentLayer = document.querySelector('.container.active');
+            currentLayer.classList.remove('active');
+            const nextLayer = document.getElementById(layerId);
+            nextLayer.classList.add('active');
+        }
+    </script>
+</body>
+</html>
